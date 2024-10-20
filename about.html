@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="Kirat Sweets And Dairy Logo.jpeg" type="x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us-Kirat Sweets And Dairy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kay+Pho+Du:wght@400;500;600;700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        .kbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 4px solid black;
+    border-top: 4px solid black;
+    background-color:#2a91fe;
+}
+
+.kbar button {
+    color: orange;
+    border: 3px solid orange;
+    padding: 8px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 50px; 
+    width: 100px; 
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1;
+    font-family: "Old Standard TT", serif;
+    font-weight:bold;
+}
+
+.kbar button:hover {
+    background-color: orange;
+    color: white; 
+    transform: scale(1.2);
+}
+
+.kbar button:before {
+    transition: 0.35s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: orange ;
+    border: 3px solid white;
+    z-index:-1;
+    border-radius: 10px;
+}
+
+.kbar button:hover:before,
+.kbar button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;   
+}    #a4{color:white;font-size: 50px; font-family: "Noto Serif", serif; font-weight: bold; text-shadow:2px 4px 4px black;}
+.chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #f2c94c;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .chatbot-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 25%;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            padding: 20px;
+            overflow: auto;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }</style>
+</head>
+<body>
+    <div style="background-color:white; color:black; padding:0;">
+        <div class="kbar"><div id="a4">About Us</div>
+        <button onclick="navigateTo('home.html')">Home</button>
+    <button onclick="navigateTo('about.html')">About Us</button>
+    <button onclick="navigateTo('menu.html')">Menu</button>
+    <button onclick="navigateTo('reservations.html')">Book A Table</button>
+    <button onclick="navigateTo('gallery.html')">Gallery</button>
+    <button onclick="navigateTo('blogs.html')">Blogs</button>
+    <button onclick="navigateTo('events.html')">Events</button>
+    <button onclick="navigateTo('contact.html')">Contact Us</button>
+    <button onclick="navigateTo('faq.html')">FAQ</button>
+    <button onclick="navigateTo('feedback.html')">Feedback</button></div>
+    <script>
+        function navigateTo(page){window.location.href = page;}
+    </script>
+
+<p style="font-size:25px; font-family: Oswald, sans-serif; color:rgb(254, 67, 254); text-shadow: 1px 1.5px 1.5px black; letter-spacing: 1px;">Welcome to Kirat Sweets, where every moment is an opportunity to savor the extraordinary!<br></p>
+
+<p style="font-size:25px; font-family:Kay Pho Du, serif; color:rgb(17, 139, 70); font-weight: 500;">Our Sweet Journey: Imagine a place where every dessert tells a story. That’s Kirat Sweets. Born from a dream to blend art and indulgence, our journey began with a single vision: to transform simple ingredients into extraordinary experiences. Our founder Sdn.Kamaldeep Kaur, a lifelong sweet enthusiast, turned a passion for sweets into a vibrant haven where tradition meets innovation.<br></p>
+
+<p style="font-size:21px; font-family:'Arial Black'; color:goldenrod;"><b>Our Sweet Philosophy: At Kirat Sweets, we don’t just make desserts—we craft moments of magic.<br>Our philosophy is rooted in three key ingredients:</b></p>
+
+<p><ul type="disc" style="font-size:20px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:seagreen; margin: 0; font-weight: 300;"><li>Pure Joy: We use only the finest, natural ingredients, ensuring that each bite bursts with authentic flavor and genuine delight.<br><br>
+<li>Impeccable Craftsmanship: Our team of culinary artists infuses every creation with love, skill, and a touch of whimsy. We push the boundaries of sweetness while staying true to classic techniques.<br><br>
+<li>Uncompromising Cleanliness: Our commitment to hygiene and cleanliness is as sweet as our treats. From our kitchen to your table, we ensure every detail is impeccably maintained.<br><br>
+<li>Why We’re Different: Step into Kirat Sweets and experience a world where flavors dance and creativity reigns. Our desserts are not just treats; they’re celebrations of life’s sweetest moments. Whether it’s our signature handcrafted chocolates or our seasonal specialties, every item is designed to surprise and delight.</li></li></li></li></ul><br><br>
+
+<p style="font-size:20px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:magenta; margin-top: 0; padding: 0;">Join the Sweet Revolution: We invite you to be a part of our story. Discover the art of sweet indulgence with us, and let’s make every day a little sweeter. Explore our creations, share your moments, and stay connected through mail:<u>kiratsweetsanddairy@gmail.com</u> or call us at <u>8054811888</u> for a taste of our latest innovations and sweet surprises.<br></p></p>
+
+<p style="font-size:25px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; background-color:#2a91fe; text-decoration:underline; text-shadow: 1px 1px 1px black; margin-bottom: 0px; padding: 15px; color: white; width: 98%; height: 40px; text-align: center;"><b>Thank you for choosing Kirat Sweets And Dairy—where every bite is an adventure in flavor and joy!</b></p>
+</div>
+<div class="chatbot-icon" onclick="toggleChatbot()">
+    <img src="https://img.icons8.com/ios-filled/50/000000/chat.png" alt="Chat Icon"/>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleChatbot()"></div>
+
+<div class="chatbot-modal" id="chatbotModal">
+    <h2>Chat with Us!</h2>
+    <iframe
+        allow="microphone;"
+        width="100%"
+        height="590"
+        style="border: none; border-radius: 8px;"
+        src="https://console.dialogflow.com/api-client/demo/embedded/3a074787-2f24-469a-91ff-6adc0e24cfc8">
+    </iframe>
+</div>
+
+<script>
+    function toggleChatbot() {
+        const modal = document.getElementById('chatbotModal');
+        const overlay = document.getElementById('overlay');
+        if (modal.style.display === "block") {
+            modal.style.display = "none";
+            overlay.style.display = "none";
+        } else {
+            modal.style.display = "block";
+            overlay.style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>

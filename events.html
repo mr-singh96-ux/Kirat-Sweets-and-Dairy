@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="Kirat Sweets And Dairy Logo.jpeg" type="x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Kirat Sweets And Dairy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Ga+Maamli&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Ga+Maamli&family=Itim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Ga+Maamli&family=Irish+Grover&family=Itim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fredoka:wght@300..700&family=Gowun+Batang:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .image-container {
+            width: 100%;
+            display: flex;
+            justify-content: top;
+            position: absolute;
+            top: 0;
+        }
+        img {
+            width: 100%;
+        }
+        .kbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: right;
+            align-items: right;
+            padding: 10px;
+        }
+        .kbar button {
+            color: orange;
+            border: 3px solid orange;
+            padding: 8px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            height: 50px; 
+            width: 100px; 
+            position: relative;
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 1;
+            font-family: "Old Standard TT", serif;
+            font-weight: bold;
+        }
+        .kbar button:hover {
+            background-color: orange;
+            color: white; 
+            transform: scale(1.2);
+        }
+        .kbar button:before {
+            transition: 0.35s all ease;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 50%;
+            bottom: 0;
+            opacity: 0;
+            content: "";
+            background-color: orange;
+            border: 3px solid white;
+            z-index: -1;
+            border-radius: 10px;
+        }
+        .kbar button:hover:before,
+        .kbar button:focus:before {
+            transition: 0.5s all ease;
+            left: 0;
+            right: 0;
+            opacity: 1;   
+        }
+        .b {
+        border: 1px solid black;
+        border-radius: 20px;
+        position: absolute;
+        top: 30%; 
+        left: 23%;
+        text-align: left;
+        color: white;
+        background-color: rgb(31, 30, 30);
+        padding: 10px;
+        font-size: 30px;
+        display: flex; 
+        align-items: top; 
+}
+
+        .text-container {
+        margin-top:63px;
+        margin-left: 0;
+        padding:0;
+}
+.chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #f2c94c;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .chatbot-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 25%;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            padding: 20px;
+            overflow: auto;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="kbar">
+        <button onclick="navigateTo('home.html')">Home</button>
+        <button onclick="navigateTo('reservations.html')">Book A Table</button>
+    </div>
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+    <div class="image-container">
+        <img alt="zomato live background hoarding" src="https://b.zmtcdn.com/data/o2_assets/fb09c135b5657328d1265b9f20b618121722348124.png"></img><p style="position:absolute; top: 0; left: 13%; font-size: 45px;color: white; margin: 0; padding: 0; font-family:Anton SC, sans-serif;">Momentum<br><font style="text-align:center; position:absolute; top: 22%; left: 5%; font-size: 75px;color: magenta; font-family:Irish Grover, system-ui; font-weight: 600;">Un<font style="font-family:Irish Grover, system-ui; font-size: 95px; color: greenyellow; font-weight: 600;">i</font>te</p></font>
+        <div class="b"><div class="text-container"><p style="color: white; font-size: 50px; font-family: Alegreya, serif;font-optical-sizing: auto;font-weight:bold; margin: 0; letter-spacing: -3px; word-spacing: 1px; ">DILJIT DOSANJH</p>
+            <p style="color: white; font-size: 20px; font-optical-sizing: auto;font-weight:500; padding: 0; margin: 10px; font-family: Barlow Condensed, sans-serif;">&#x1F4C6;26 October Onwards</p><p style="color: white; font-size: 20px; font-optical-sizing: auto;font-weight:500; padding: 0; margin: 10px; font-family: Barlow Condensed, sans-serif;">&#x1F4CC;Multiple Cities</p></div><iframe width="490" height="275" src="https://b.zmtcdn.com/data/file_assets/cdc1bb6ebe482846127a47901fcc41f71725447484.mp4" frameborder="" allow="autoplay; encrypted media; repeat" style="border-radius: 15px; margin-left: 30px;"></iframe></div></div><p style="text-align: center; color: white; font-size: 80px; margin-top: 23%; font-family:Gowun Batang, serif; font-weight: 600; margin-left: 5%; margin-bottom: 2%;">Event Host Locations</p>
+            <table style="font-family:Merriweather, serif; font-weight: 400; font-style: normal; font-size: 25px; color: yellow; height: 500px; width: 800px; margin-left: 26%; margin-top:0; border:5px; border-style:double; margin-bottom: 30px;"><tr><th>Delhi NCR</th><th>26 Oct</th></tr>
+                <tr><th>Hyderabad</th><th>15 Nov</th></tr>
+                <tr><th>Ahmedabad</th><th>17 Nov</th></tr>
+                <tr><th>Lucknow</th><th>22 Nov</th></tr>
+                <tr><th>Pune</th><th>24 Nov</th></tr>
+                <tr><th>Kolkata</th><th>30 Nov</th></tr>
+                <tr><th>Bengluru</th><th>6 Dec</th></tr>
+                <tr><th>Indore</th><th>8 Dec</th></tr>
+                <tr><th>Chandigarh</th><th>14 Dec</th></tr>
+                <tr><th>Guwahati</th><th>29 Dec</th></tr>
+                <tr><th>Mumbai</th><th>To Be Announced</th></tr>
+                <tr><th>Delhi Day 2</th><th>To Be Announced</th></tr>
+                <tr><th>Jaipur</th><th>To Be Announced</th></tr></table>
+                <p style="background-color: orange; height: 50px; width: 100%; color:white ; margin-bottom: 0%; font-size: 38px; padding: 8px; font-family:Fredoka, sans-serif; font-weight:550;"><marquee behaviour="scroll" direction="left">All Tickets Are Sold Out! Contact For More Details:<a href="E-mail:kiratsweetsanddairy@gmail.com"> kiratsweetsanddairy@gmail.com.</a></marquee></p>
+                
+                <div class="chatbot-icon" onclick="toggleChatbot()">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/chat.png" alt="Chat Icon"/>
+                </div>
+                
+                <div class="overlay" id="overlay" onclick="toggleChatbot()"></div>
+                
+                <div class="chatbot-modal" id="chatbotModal">
+                    <h2>Chat with Us!</h2>
+                    <iframe
+                        allow="microphone;"
+                        width="100%"
+                        height="590"
+                        style="border: none; border-radius: 8px;"
+                        src="https://console.dialogflow.com/api-client/demo/embedded/3a074787-2f24-469a-91ff-6adc0e24cfc8">
+                    </iframe>
+                </div>
+                
+                <script>
+                    function toggleChatbot() {
+                        const modal = document.getElementById('chatbotModal');
+                        const overlay = document.getElementById('overlay');
+                        if (modal.style.display === "block") {
+                            modal.style.display = "none";
+                            overlay.style.display = "none";
+                        } else {
+                            modal.style.display = "block";
+                            overlay.style.display = "block";
+                        }
+                    }
+                </script> 
+</body>
+</html>
