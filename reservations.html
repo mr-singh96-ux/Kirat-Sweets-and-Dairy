@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="Kirat Sweets And Dairy Logo.jpeg" type="x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book A Table-Kirat Sweets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kay+Pho+Du:wght@400;500;600;700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: white;
+            line-height: 1.4;
+            font-family:Kay Pho Du, serif;
+            /*radial-gradient(circle, #EAB8E4, #D4A5E3)
+            background-image: radial-gradient(circle, #3BB273, #1A4D2E);*/
+        }
+        .kbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 4px solid black;
+    border-top: 4px solid black;
+    background-color:#2a91fe;
+}
+
+.kbar button {
+    color: orange;
+    border: 3px solid orange;
+    padding: 7px;
+    margin: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 50px; 
+    width: 95px; 
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1;
+    font-family: "Old Standard TT", serif;
+    font-weight:bold;
+}
+
+.kbar button:hover {
+    background-color: orange;
+    color: white; 
+    transform: scale(1.2);
+}
+
+.kbar button:before {
+    transition: 0.35s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: orange ;
+    border: 3px solid white;
+    z-index:-1;
+    border-radius: 10px;
+}
+
+.kbar button:hover:before,
+.kbar button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;   
+}
+#a4
+{color:white;font-size: 40px; font-family: "Noto Serif", serif; font-weight: bold; text-shadow:2px 4px 4px black;}
+        .text{
+            background-color:white;
+            justify-content:center;
+            align-items: center;
+            font-size: 25px;
+            text-align: center;
+            margin: auto;
+            padding:10px;
+        }
+        .form{
+            margin:65px;
+            word-spacing: 300px;
+            color: black;
+            justify-content: space-around;
+            font-size: 30px;
+            margin-bottom: -10px;
+            
+        }
+        .p{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+            align-items: center;
+            padding: 10px;
+            margin-left:2%;
+        }
+        .p button{
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            padding:0;
+            margin-left:180px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+            height: 50px;
+            width:250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .p button:hover {
+            background-color: blue;
+            transform: scale(1.05);}
+            .chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #f2c94c;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+            .chatbot-icon img {
+             width: 30px;
+            height: 30px;
+        }
+        .chatbot-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 25%;
+            height: 1000%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            padding: 20px;
+            overflow: auto;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        #qrCode {
+            margin-top:2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="kbar"><div id="a4">@kiratsweets</div>
+    <button onclick="navigateTo('home.html')">Home</button>
+        <button onclick="navigateTo('about.html')">About Us</button>
+        <button onclick="navigateTo('menu.html')">Menu</button>
+        <button onclick="navigateTo('reservations.html')">Book A Table</button>
+        <button onclick="navigateTo('gallery.html')">Gallery</button>
+        <button onclick="navigateTo('blogs.html')">Blogs</button>
+        <button onclick="navigateTo('events.html')">Events</button>
+        <button onclick="navigateTo('contact.html')">Contact Us</button>
+        <button onclick="navigateTo('faq.html')">FAQ</button>
+        <button onclick="navigateTo('feedback.html')">Feedback</button>
+        </div><script>
+            function navigateTo(page){window.location.href = page;}
+        </script>
+        <p style="color:black; font-size: 50px; margin:25px; font-family: Oswald, sans-serif; padding: 0; color: magenta; text-shadow: 3px 1px 1px black; justify-content: center; display: flex; "><p style="color:black; font-size: 50px; margin:25px; font-family: Oswald, sans-serif; padding: 0; color: magenta; text-shadow: 3px 1px 1px black; justify-content: center; display: flex; "><span style="background-image: radial-gradient(circle, #EAB8E4, #D4A5E3); padding: 19px; border-radius: 10px; border: 5px solid black;">BOOKINGS</span><p style="color:black; font-size: 50px; margin:25px; font-family: Oswald, sans-serif; padding: 0; color: magenta; text-shadow: 3px 1px 1px black; justify-content: center; display: flex; "></p>
+        
+        
+            <form id="paymentForm" style="border: 5px solid #007BFF; width: 1000px; margin: auto; background-color: aliceblue; padding: 20px; display: flex; flex-direction: column; align-items: center;">
+            <p style="display: flex; justify-content:center; align-items: center; margin: 20px;">
+            <img src="Brown Flat Illustrative Chef Restaurant Logo.gif" style="border:4px solid brown; height:250px; width:250px; margin:0 5px; padding: 0; border-radius: 15px;">
+            <img src="Kirat Sweets.jpg" style="border:4px solid brown; height:400px; width:250px; padding: 0;margin: 0 5px; border-radius: 15px; justify-content: space-between;">
+            <img src="https://ideogram.ai/assets/progressive-image/balanced/response/iPxH_RkATf-7zX247Jkduw" style="border:3px solid; height:250px; width:250px;margin:0 5px; padding: 0; border-radius: 15px; border: 4px solid brown;"></img></p><div class="form">
+            Name<font color="red">*</font>:<br><input type="text" placeholder="Name of Booking Holder" id="name" required style="width:615px; height: 35px; border: 3px solid #007BFF; border-radius: 10px; padding: 5px; font-size: 20px;"><br><br>
+            Email<font color="red">*</font>:  Phone<font color="red">*</font>:<br><input type="text" placeholder="Email" id="email" required style="width:200px; height: 35px; border: 3px solid #007BFF; border-radius: 10px; padding: 5px; font-size: 20px;"><input type="number" id="mobile" placeholder="Phone"required style="width:200px; height: 35px; border: 3px solid #007BFF; border-radius: 10px; padding: 5px; margin-left: 190px; font-size: 20px;"><br><br>
+            Date<font color="red">*</font>: Time<font color="red">*</font>:<br><input type="text" placeholder="dd-mm-yyyy" id="date" required style="width:200px; height: 35px; border: 3px solid #007BFF; border-radius: 10px; padding: 5px; font-size: 20px;"><input type="time" placeholder="Time" id="time" required style="width:200px; height: 35px; border: 3px solid #007BFF; border-radius: 10px; padding: 5px; margin-left: 180px;"><br><br>
+            People<font color="red">*</font>:<br><select required placeholder=".....Select....." style="width:630px; height: 50px; border: 3px solid #007BFF; border-radius: 10px; padding: 5px; font-size: 20px;">
+            <option>2 Persons</option>
+            <option>4 Persons</option>
+            <option>6 Persons</option>
+            <option>8 Persons</option>
+            <option>12 Persons</option>
+            <option>16 Persons</option></select><br><br>
+            Comments(Optional)<br><input type="text" id="comments" placeholder="Any Requirements" style="width:620px; height: 60px; border: 3px solid #007BFF; border-radius: 10px; padding: 5px; font-size: 20px;">
+            <div class="p"><button type="Submit">Book A Table</button></div></div>
+            <div id="paymentMessage" style="display:none; color: green; font-size: 20px; text-align: center; margin-top:25px;">
+            Payment link generated! Please scan the QR code below to proceed with your payment.</div>
+            <div id="qrCode"></div>
+            <div class="p"><button id="confirmation" style="display: none; margin-left: -10px;" onclick="window.open('https://wa.me/+918968618061?text=Hello!%20Thank%20you%20for%20your%20reservation%20at%20Kirat%20Sweets.%20To%20complete%20your%20booking,%20please%20send%20us%20a%20screenshot%20of%20your%20payment.%20This%20helps%20us%20confirm%20your%20reservation%20quickly.%20If%20you%20have%20any%20questions,%20feel%20free%20to%20ask%20us%20here.%20Thank%20you!!', '_self');">Confirm Booking</button></div>  
+        </form></table>
+        <!--<div class="text"><b><p style="color: #007BFF; padding: 0; margin:0; text-transform: uppercase; word-spacing: 50px; text-shadow: 1px 2px 2px black;">Mon Tue Wed Thu Fri Sat Sun</p></b><br><p style="color:black; padding: 0; margin:0;word-spacing: 20px;">6:00am 6:00am 6:00am 6:00am 6:00am 6:00am 6:00am</p>
+            <p style="color:black; padding: 0; margin:0;word-spacing: 92px;">| | | | | | |</p><p style="color:black; padding: 0; margin:0;word-spacing: 5px;">10:00pm 10:00pm 10:00pm 10:00pm 10:00pm 10:00pm 10:00pm</p></div>-->
+        <div class="text"><b><p style="color: #007BFF; padding: 0; margin:0; text-transform: uppercase; text-shadow: 1px 2px 2px black; word-spacing: 20px;">Mon-Sun<br>
+        Clock-In Clock-Out</p></b><p style="color:black; padding: 0; margin:0;word-spacing: 20px;">6:00am 10:00pm</p><p style="color: white; font-weight: bold; background-color: #007BFF; height: 70px; width: 98%;padding: 20px; margin-bottom: 0;">Kirat Sweets&trade;<br>Kirat Sweets&reg; is a registered trademark.</p></div>
+        <div class="chatbot-icon" onclick="toggleChatbot()">
+        <img src="https://img.icons8.com/ios-filled/50/000000/chat.png" alt="Chat Icon"/>
+        </div>
+        <div class="overlay" id="overlay" onclick="toggleChatbot()"></div>
+        <div class="chatbot-modal" id="chatbotModal">
+                <h2>Chat with Us!</h2>
+                <iframe
+                    allow="microphone;"
+                    width="100%"
+                    height="590"
+                    style="border: none; border-radius: 8px;"
+                    src="https://console.dialogflow.com/api-client/demo/embedded/3a074787-2f24-469a-91ff-6adc0e24cfc8">
+                </iframe>
+            </div>
+            
+            <script>
+                function toggleChatbot() {
+                    const modal = document.getElementById('chatbotModal');
+                    const overlay = document.getElementById('overlay');
+                    if (modal.style.display === "block") {
+                        modal.style.display = "none";
+                        overlay.style.display = "none";
+                    } else {
+                        modal.style.display = "block";
+                        overlay.style.display = "block";
+                    }
+                }
+            </script>     
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('#paymentForm').submit(function(event) {
+                        event.preventDefault(); // Prevent form submission
+                        
+                        // Get input values
+                        const name = $('#name').val();
+                        const mobile = $('#mobile').val();
+                        const email = $('#email').val();
+                        const date = $('#date').val();
+                        const time = $('#time').val();
+                        const comments = $('#comments').val();
+            
+                        // Generate a random order ID (you can customize this logic)
+                        const orderId = 'KSD' + Math.floor(Math.random() * 1000000); // Generates a random order ID
+            
+                        // Construct the UPI link with user details and order ID
+                        const upiLink = `upi://pay?pa=kamaldeepkaurmani@okicici&pn=Kirat%20Sweets&am=499.00&cu=INR&tn=Order%20ID:${orderId},%20Name:${name},%20Mobile:${mobile},%20Email:${email},%20Date:${date},%20Time:${time},%20Comment(if any):${comments}`;
+            
+                        // Clear existing QR code and generate a new one
+                        $('#qrCode').empty().qrcode({
+                            width: 256,
+                            height: 256,
+                            text: upiLink
+                        });
+                        $('#paymentMessage').show();
+                        $('#confirmation').show();
+                    });
+                });
+            </script>
+</body>
+</html>

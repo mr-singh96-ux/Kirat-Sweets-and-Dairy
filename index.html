@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Authentication with Firebase</title>
+    <!-- Load Firebase SDK from CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBag3dZ3-Ivgq1etvwvIzH2qMEUNo0dvMw",
+            authDomain: "kirat-sweets-and-dairy-9c93a.firebaseapp.com",
+            projectId: "kirat-sweets-and-dairy-9c93a",
+            storageBucket: "kirat-sweets-and-dairy-9c93a.appspot.com",
+            messagingSenderId: "808992124173",
+            appId: "1:808992124173:web:92bd3699922d806fc79444",
+            measurementId: "G-6HEHSTGF87"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Set up reCAPTCHA
+        function setupRecaptcha() {
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+                'size': 'invisible',
+                'callback': function(response) {
+                    // reCAPTCHA solved - will proceed with submit function
+                }
+            });
+        }
+
+        // Send OTP function
+        async function sendOtp(event) {
+            event.preventDefault();
+            const phoneNumber = document.getElementById('phoneNumber').value;
+
+            if (!phoneNumber.startsWith('+91')) {
+                alert('Please enter a valid Indian phone number with +91');
+                return;
+            }
+
+            setupRecaptcha();
+
+            try {
+                const appVerifier = window.recaptchaVerifier;
+                const confirmationResult = await auth.signInWithPhoneNumber(phoneNumber, appVerifier);
+                window.confirmationResult = confirmationResult;
+                alert('OTP sent to ' + phoneNumber);
+                document.getElementById('otpForm').style.display = 'block'; // Show OTP input
+            } catch (error) {
+                console.error('Error during OTP sending:', error);
+                alert(error.message);
+            }
+        }
+
+        // Verify OTP function
+        async function verifyOtp(event) {
+            event.preventDefault();
+            const otp = document.getElementById('otp').value;
+
+            try {
+                const result = await window.confirmationResult.confirm(otp);
+                alert('Phone number verified successfully!');
+            } catch (error) {
+                console.error('Error during OTP verification:', error);
+                alert('Invalid OTP. Please try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Phone Authentication with Firebase</h1>
+    <div id="recaptcha-container"></div>
+
+    <h2>Enter your phone number</h2>
+    <form id="phoneForm" onsubmit="sendOtp(event)">
+        <input type="text" id="phoneNumber" placeholder="Phone Number (e.g., +919876543210)" required />
+        <button type="submit">Send OTP</button>
+    </form>
+
+    <h2>Enter OTP</h2>
+    <form id="otpForm" onsubmit="verifyOtp(event)" style="display: none;">
+        <input type="text" id="otp" placeholder="OTP" required />
+        <button type="submit">Verify OTP</button>
+    </form>
+</body>
+</html>

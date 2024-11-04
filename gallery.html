@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery-Kirat Sweets And Dairy</title>
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .gallery {
+        text-align: center;
+    }
+    .gallery-item {
+        display: inline-block;
+        margin: 10px;
+        width: 400px;
+        vertical-align: top;
+        border: 1px solid black;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: white;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .description {
+        padding: 10px;
+        text-align: left;
+    }
+    .kbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 4px solid black;
+    border-top: 4px solid black;
+    background-color:#2a91fe;
+}
+
+.kbar button {
+    color: orange;
+    border: 3px solid orange;
+    padding: 8px;
+    margin: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 50px; 
+    width: 100px; 
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1;
+    font-family: "Old Standard TT", serif;
+    font-weight:bold;
+}
+
+.kbar button:hover {
+    background-color: orange;
+    color: white; 
+    transform: scale(1.2);
+}
+
+.kbar button:before {
+    transition: 0.35s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: orange ;
+    border: 3px solid white;
+    z-index:-1;
+    border-radius: 10px;
+}
+
+.kbar button:hover:before,
+.kbar button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;   
+}
+.chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #f2c94c;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .chatbot-icon img {
+             width: 30px;
+            height: 30px;
+        }
+        .chatbot-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 25%;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            padding: 20px;
+            overflow: auto;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        #a4{color:white;font-size: 50px; font-family: "Noto Serif", serif; font-weight: bold; text-shadow:2px 4px 4px black; text-align: center;}
+     .text{
+        font-size:45px;
+        text-align:center;
+        animation:fade 2s infinite alternate;
+    }
+    @keyframes fade{
+        0%{opacity:1;}
+        100%{opacity:0}
+    }
+    @keyframes appear{
+        from{opacity:0;
+        scale:0.4;
+    }
+    to{
+        opacity:1;
+        scale:1;
+    }
+    }
+    .gallery-item{
+        animation: appear linear;
+        animation-timeline:view();
+        animation-range:entry 0% cover 40%;
+    }
+</style>
+</head>
+<body>
+    <div style="background-color:white; color:black; padding:0;">
+        <div class="kbar"><div id="a4">Featured<br>Works</div>
+        <button onclick="navigateTo('home.html')">Home</button>
+    <button onclick="navigateTo('about.html')">About Us</button>
+    <button onclick="navigateTo('menu.html')">Menu</button>
+    <button onclick="navigateTo('reservations.html')">Book A Table</button>
+    <button onclick="navigateTo('gallery.html')">Gallery</button>
+    <button onclick="navigateTo('blogs.html')">Blogs</button>
+    <button onclick="navigateTo('events.html')">Events</button>
+    <button onclick="navigateTo('contact.html')">Contact Us</button>
+    <button onclick="navigateTo('faq.html')">FAQ</button>
+    <button onclick="navigateTo('feedback.html')">Feedback</button></div>
+    <script>
+        function navigateTo(page){window.location.href = page;}
+    </script>
+    <div class="text">Restaurant Gallery</div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://th.bing.com/th/id/OIP.fSP4UQouhDctzaqOS7hyvwHaE8?w=221&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Restaurant Interior 1">
+            <div class="description">
+                <h3>Cozy Interior</h3>
+                <p>A warm and inviting space for you to enjoy your meal.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/originals/58/f0/b3/58f0b3a7353ab63940cc4203dd206be5.png" alt="Restaurant Interior 2">
+            <div class="description">
+                <h3>Elegant Dining</h3>
+                <p>Experience fine dining with a touch of elegance.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="Mithai3.jpeg" alt="Delicious Dish 1">
+            <div class="description">
+                <h3>Signature Dish</h3>
+                <p>Try our chef's special signature dish, a must-have!</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://thumbs.dreamstime.com/z/mexican-food-vertical-12339019.jpg" alt="Delicious Dish 2">
+            <div class="description">
+                <h3>Fresh Ingredients</h3>
+                <p>We use only the freshest ingredients in all our dishes.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://th.bing.com/th/id/OIP.fsO8BaRlqRjhso_4kppYWAAAAA?rs=1&pid=ImgDetMain" alt="Event at Restaurant">
+            <div class="description">
+                <h3>Special Events</h3>
+                <p>Join us for special events and promotions throughout the year.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/originals/43/93/bb/4393bb485cd83f72197b9434817e421d.jpg" alt="Outdoor Seating">
+            <div class="description">
+                <h3>Outdoor Seating</h3>
+                <p>Enjoy your meal in our beautiful outdoor seating area.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://www.shutterstock.com/shutterstock/photos/2287174959/display_1500/stock-photo-vertical-image-of-wine-glasses-standing-in-a-line-against-white-background-different-red-white-2287174959.jpg" alt="Event at Restaurant">
+            <div class="description">
+                <h3>Chef's Specials</h3>
+                <p>Join us on every weekend to enjoy our Chef's Special menu.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://c8.alamy.com/comp/PJPJWE/wine-pouring-glass-bottle-white-portrait-format-pour-alcohol-PJPJWE.jpg" height = 377px alt="Event at Restaurant">
+            <div class="description">
+                <h3>Wine Tasting</h3>
+                <p>Come for our special wine tasting event this Saturday.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://www.shutterstock.com/image-photo/chef-cooking-vegetables-on-pan-600nw-781081099.jpg" alt="Event at Restaurant">
+            <div class="description">
+                <h3>Cooking Session</h3>
+                <p>Join our special cooking sessions hoisted by chef Sanjeev Kapoor.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://thumbs.dreamstime.com/b/cool-party-22272667.jpg" alt="Event at Restaurant">
+            <div class="description">
+                <h3>Karaoke Night</h3>
+                <p>Our karaoke nights are hoisted every friday!</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/736x/e6/2a/15/e62a1530f891b48d2eb39737f6ed201d.jpg" alt="Event at Restaurant">
+            <div class="description">
+                <h3>Dance The Night Away!</h3>
+                <p>Dance the night away on our live event!</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://media.istockphoto.com/id/884635392/photo/heres-to-us-and-our-future.jpg?s=612x612&w=0&k=20&c=umyDSeCx-lwYjHpsXTkrP0Kg5bjk7laXtLvFGP47GfA=" alt="Event at Restaurant">
+            <div class="description">
+                <h3>Candle Light Dinner</h3>
+                <p>Treat your special one with a wonderful Candle Light Dinner!</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/736x/dd/f5/bd/ddf5bd2d544ae090ba90ee38bba7c118.jpg" alt="Event at Restaurant">
+            <div class="description">
+                <h3>Halloween Party</h3>
+                <p>Join us for our Halloween Party this year!</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://img.freepik.com/free-vector/party-crowd-background-with-glittery-lights_1048-10623.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721865600&semt=ais_user" alt="Event at Restaurant">
+            <div class="description">
+                <h3>Celebration Time!</h3>
+                <p>Join us to celebrate our 25th Anniversary!</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://media.istockphoto.com/id/540856662/photo/man-playing-the-grand-piano.jpg?s=612x612&w=0&k=20&c=seV7kEr1549kFqM2H99STOhetJftQNtBQh-0yhiVO3c=" alt="Event at Restaurant">
+            <div class="description">
+                <h3>Piano Play</h3>
+                <p>You are free to join us for our special piano play!/p>
+            </div>
+        </div>
+    </div>
+    <div class="chatbot-icon" onclick="toggleChatbot()">
+        <img src="https://img.icons8.com/ios-filled/50/000000/chat.png" alt="Chat Icon"/>
+    </div>
+    
+    <div class="overlay" id="overlay" onclick="toggleChatbot()"></div>
+    
+    <div class="chatbot-modal" id="chatbotModal">
+        <h2>Chat with Us!</h2>
+        <iframe
+            allow="microphone;"
+            width="100%"
+            height="590"
+            style="border: none; border-radius: 8px;"
+            src="https://console.dialogflow.com/api-client/demo/embedded/3a074787-2f24-469a-91ff-6adc0e24cfc8">
+        </iframe>
+    </div>
+    
+    <script>
+        function toggleChatbot() {
+            const modal = document.getElementById('chatbotModal');
+            const overlay = document.getElementById('overlay');
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+                overlay.style.display = "none";
+            } else {
+                modal.style.display = "block";
+                overlay.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
