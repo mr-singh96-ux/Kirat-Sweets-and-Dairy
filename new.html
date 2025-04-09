@@ -145,36 +145,5 @@
         <img src="Kirat%20Sweets%20Menu.jpeg" width="550px" height="660px">
         <img src="Sahni%20Dairy%20Menu.jpeg" width="550px" height="660px">
     </div>
-    
-    <div class="chatbot-icon" onclick="toggleChatbot()">
-        <img src="https://img.icons8.com/ios-filled/50/000000/chat.png" alt="Chat Icon"/>
-    </div>
-    
-    <div class="overlay" id="overlay" onclick="toggleChatbot()"></div>
-    
-    <div class="chatbot-modal" id="chatbotModal">
-        <h2>Chat with Us!</h2>
-        <iframe
-            allow="microphone;"
-            width="100%"
-            height="590"
-            style="border: none; border-radius: 8px;"
-            src="https://console.dialogflow.com/api-client/demo/embedded/3a074787-2f24-469a-91ff-6adc0e24cfc8">
-        </iframe>
-    </div>
-    
-    <script>
-        function toggleChatbot() {
-            const modal = document.getElementById('chatbotModal');
-            const overlay = document.getElementById('overlay');
-            if (modal.style.display === "block") {
-                modal.style.display = "none";
-                overlay.style.display = "none";
-            } else {
-                modal.style.display = "block";
-                overlay.style.display = "block";
-            }
-        }
-    </script>
 </body>
 </html>
