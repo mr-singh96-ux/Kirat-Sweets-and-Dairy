@@ -138,6 +138,27 @@
                 width: 80%;
             }
         }
+        .order-now {
+            position: fixed;
+            bottom: 80px;
+            right: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .order-now:hover {
+            color: black;
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -145,5 +166,8 @@
         <img src="Kirat%20Sweets%20Menu.jpeg" width="550px" height="660px">
         <img src="Sahni%20Dairy%20Menu.jpeg" width="550px" height="660px">
     </div>
+    <button class="order-now" onclick="window.location.href='https://mr-singh96-ux.github.io/Kirat-Sweets/online_order.html'">
+        Order Meal
+    </button>
 </body>
 </html>
